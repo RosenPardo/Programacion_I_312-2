@@ -1,0 +1,1 @@
+from Ejercicios_FUNCIONES.for_10_funcion import *
