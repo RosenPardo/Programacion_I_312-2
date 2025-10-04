@@ -1,34 +1,9 @@
-def solo_enteros(cadena:str) -> bool:
-    """Verifica si una cadena representa un número entero válido (positivo o negativo)
-
-    Args:
-        cadena (str): Cadena a verificar.
-
-    Returns:
-        bool: True si es una cadena de Int | False si no es solamente de enteros
-    """
-    
-    if len(cadena) == 1: #Corroborar que si es el largo de la cadena es 1, que no sea un signo menos
-        if ord(cadena) == 32:
-            son_enteros = False
-            return son_enteros
-
-    for i in range(len(cadena)):
-        if (ord(cadena[i]) >= 48 and ord(cadena[i]) <= 57) or (ord(cadena[i]) == 45) or (ord(cadena[i]) == 32):
-            son_enteros = True
-        else:
-            son_enteros = False
-            break
-
-    return son_enteros
-
 #Imprimir matriz:
 def recorrer_matriz(mi_matriz):
     for i in range(len(mi_matriz)): # 0 1
         for j in range(len(mi_matriz[i])): #i = 0 entonces j = 0, 1, 2, 3 cuando i = 1 entonces j = 0, 1, 2, 3
             print(mi_matriz[i][j], end= " ")
         print("")
-
 
 #Otra forma de imprimir matriz:
 def recorrer_matriz_2(mi_matriz):
