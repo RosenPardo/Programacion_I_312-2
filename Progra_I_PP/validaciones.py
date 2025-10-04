@@ -67,3 +67,32 @@ def solo_letras(cadena:str) -> bool:
             break
 
     return son_letras
+
+def capitalizar_texto(array_texto):
+
+    array_capitalizado = ""
+
+    for caracter in range(len(array_texto)):
+        if ord(array_texto[caracter]) >= 97 and ord(array_texto[caracter]) <= 122:
+            letra_mayus = chr(ord(array_texto[caracter]) - 32)
+            array_capitalizado += letra_mayus
+        else:
+            array_capitalizado += array_texto[caracter]
+            
+    return array_capitalizado
+
+def validar_genero(cadena: chr) -> bool:
+    """Verifica que el valor de la cadena sea 'F' 'M' o 'X'"
+
+    Args:
+        cadena (chr): Cadena a verificar
+
+    Returns:
+        bool: True si es un caracter de válido | False si no es uno de los caracteres deseados.
+    """
+    cadena = capitalizar_texto(cadena)
+
+    if cadena == "F" or cadena == "M" or cadena == "X":
+        return True
+    else:
+        return False

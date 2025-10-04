@@ -32,11 +32,11 @@ donde estará la cantidad de veces que se repite la nota 10.
 from validaciones import *
 from funciones import *
 
-cantidad_estudiantes = 10
+cantidad_estudiantes = 3
 calificaciones = inicializar_matriz(cantidad_estudiantes, 5, 0)
+legajo_estudiante = [0] * cantidad_estudiantes
 nombre_estudiante = [0] * cantidad_estudiantes
 genero_estudiante = [0] * cantidad_estudiantes
-legajo_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
 
 while True:
@@ -48,15 +48,17 @@ while True:
     match menu:
         case 1:
             print("\nCARGA DE DATOS: \n")
-
-            nombre_estudiante = input("Ingrese el nombre del estudiante: ")
-
-            validacion_nombres = solo_letras(nombre_estudiante)
-
-            print(validacion_nombres)
+            carga_datos = False
+            while carga_datos == False:
+                carga_datos = cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
+                
 
         case 2:
-            print("\n ")
+            print("\n MOSTRAR DATOS CARGADOS: \n")
+            recorrer_matriz(calificaciones)
+            mostrar_lista(legajo_estudiante)
+            mostrar_lista(nombre_estudiante)
+            mostrar_lista(genero_estudiante)
         case 3:
             pass
         case 4:
