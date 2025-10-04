@@ -71,19 +71,30 @@ def mostrar_lista(lista:list) -> None:
     for i in range(len(lista)):
         print(lista[i], end= " ")
 
+def legajo_duplicado(legajo_estudiante, num_legajo):
+    for i in range(len(legajo_estudiante)):
+        if legajo_estudiante[i] == int(num_legajo):
+            print("El número de legajo ya existe. ")
+            return True
+    
+    return False
 
 def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo):
-    
     for i in range(len(legajo_estudiante)):
+
         if estado_legajo[i] == 0:
             #Carga legajo:
             num_legajo = input("Ingrese el número de legajo que desea cargar: ")
             validar_int = solo_enteros(num_legajo)
-            
-            while validar_int == False and len(num_legajo) != 6:
+            validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
+
+            while validar_int == False or len(num_legajo) != 6 or validar_duplicado == True:
                 num_legajo = input("Ingresó un valor erróneo. Ingrese el número de legajo que desea cargar: ")
                 validar_int = solo_enteros(num_legajo)
+                validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
+                
             
+
             legajo_estudiante[i] = int(num_legajo)
 
             #Carga de nombre:
@@ -105,7 +116,9 @@ def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado
                 validar_gen = validar_genero(genero)
             
             genero_estudiante[i] = genero
-
             estado_legajo[i] = 1
+
+            print("\n Estudiante cargado correctamente. \n")
+
     return True
         
