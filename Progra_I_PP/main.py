@@ -31,13 +31,19 @@ donde estará la cantidad de veces que se repite la nota 10.
 """
 from validaciones import *
 from funciones import *
-
 cantidad_estudiantes = 3
 calificaciones = inicializar_matriz(cantidad_estudiantes, 5, 0)
 legajo_estudiante = [0] * cantidad_estudiantes
 nombre_estudiante = [0] * cantidad_estudiantes
 genero_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
+
+
+calificaciones = [[5,2,8,10], [10,8,9,5,5], [2,4,6,9,9]]
+legajo_estudiante = [112233, 332211, 445566]
+nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
+genero_estudiante = ["M", "X", "F"]
+estado_legajo = [1, 1, 1]
 
 while True:
 
@@ -51,14 +57,12 @@ while True:
             carga_datos = False
             while carga_datos == False:
                 carga_datos = cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
-                
+            #AGREGAR CARGA DE NOTAS
 
         case 2:
             print("\n MOSTRAR DATOS CARGADOS: \n")
-            recorrer_matriz(calificaciones)
-            mostrar_lista(legajo_estudiante)
-            mostrar_lista(nombre_estudiante)
-            mostrar_lista(genero_estudiante)
+            mostrar_datos_cargados(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante)
+
         case 3:
             pass
         case 4:
