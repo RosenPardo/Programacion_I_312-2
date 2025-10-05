@@ -143,14 +143,20 @@ def cargar_promedios(calificaciones, estado_legajo):
     promedio_estudiantes = inicializar_matriz(len(estado_legajo), 5, 0)
     suma_notas = 0
     q_estudiantes = 0
+    contador_materias = 0
+
     for i in range(len(calificaciones)):
         if estado_legajo[i] == 1:
             q_estudiantes += 1
-        for j in range(len(calificaciones[i])):
-            if estado_legajo[i] == 1:
+
+            for j in range(len(calificaciones[i])):
+                if contador_materias == 5:
+                    suma_notas = 0
+                    contador_materias = 0
+                contador_materias += 1
                 suma_notas += calificaciones[i][j]
-                print(f"Suma_notas: {suma_notas}")
                 print(f"q_estudiantes: {q_estudiantes}")
+                print(f"Suma_notas: {suma_notas}")
         promedio_estudiantes[i] = suma_notas / 5
 
     return promedio_estudiantes

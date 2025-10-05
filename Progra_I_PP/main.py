@@ -39,7 +39,7 @@ genero_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
 
 
-calificaciones = [[5,2,8,10,7], [10,8,9,5,5], [2,4,6,9,9]]
+calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,6,9,10]]
 legajo_estudiante = [112233, 332211, 445566]
 nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
 genero_estudiante = ["M", "X", "F"]
