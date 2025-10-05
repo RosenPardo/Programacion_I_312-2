@@ -43,13 +43,12 @@ def cargar_lista_str(lista:list, mensaje_dato:str = "Ingrese el str a cargar: ")
 #Creación e inicialización una matriz:
 def inicializar_matriz(cantidad_filas:int, cantidad_columnas:int, valor_inicial:any) -> list:
     matriz = []
-    for i in range(cantidad_filas):
+    for _ in range(cantidad_filas):
         fila = [valor_inicial] * cantidad_columnas  
 
         matriz += [fila]
 
     return matriz
-
 
 #Carga secuencial de matriz:
 def cargar_matriz_secuancialmente(matriz:list):
@@ -66,7 +65,6 @@ def buscar_valor_entero(matriz:list, valor:int):
                 print(f"Se encontró el valor {valor} en la fila {i}, columna {j}.")
 
 #Mostrar lista:
-
 def mostrar_lista(lista:list) -> None:
     for i in range(len(lista)):
         print(lista[i], end= " ")
@@ -115,6 +113,7 @@ def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado
                 genero = input("Ingresó un valor erróneo. Ingrese el género del estudiante que desea cargar ('F' | 'M' | 'X'): ")
                 validar_gen = validar_genero(genero)
             
+            genero = capitalizar_texto(genero)
             genero_estudiante[i] = genero
             estado_legajo[i] = 1
 

@@ -39,11 +39,11 @@ genero_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
 
 
-calificaciones = [[5,2,8,10], [10,8,9,5,5], [2,4,6,9,9]]
+"""calificaciones = [[5,2,8,10], [10,8,9,5,5], [2,4,6,9,9]]
 legajo_estudiante = [112233, 332211, 445566]
 nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
 genero_estudiante = ["M", "X", "F"]
-estado_legajo = [1, 1, 1]
+estado_legajo = [1, 1, 1]"""
 
 while True:
 
@@ -64,7 +64,12 @@ while True:
             mostrar_datos_cargados(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante)
 
         case 3:
-            pass
+            def mostrar_promedios(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante):
+                promedio_estudiantes = []
+                for i in range(len(calificaciones)):
+                    promedio_estudiantes 
+                    for j in range(len(calificaciones[i])):
+                        pass
         case 4:
             pass
         case 5:
