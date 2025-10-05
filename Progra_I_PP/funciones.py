@@ -121,7 +121,6 @@ def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado
 
     return True
 
-
 def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
     """
     Función que imprime lo que se encuentra cargado en la matriz y arrays compartidos.
@@ -139,4 +138,34 @@ def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre
 
         for j in range(len(calificaciones[i])): 
             print(f"Nota Materia_{j+1}: {calificaciones[i][j]}")
-            
+
+def cargar_promedios(calificaciones, estado_legajo):
+    promedio_estudiantes = inicializar_matriz(len(estado_legajo), 5, 0)
+    suma_notas = 0
+    q_estudiantes = 0
+    for i in range(len(calificaciones)):
+        if estado_legajo[i] == 1:
+            q_estudiantes += 1
+        for j in range(len(calificaciones[i])):
+            if estado_legajo[i] == 1:
+                suma_notas += calificaciones[i][j]
+                print(f"Suma_notas: {suma_notas}")
+                print(f"q_estudiantes: {q_estudiantes}")
+        promedio_estudiantes[i] = suma_notas / 5
+
+    return promedio_estudiantes
+
+def mostrar_promedios(calificaciones, estado_legajo):
+    notas_estudiantes = cargar_promedios(calificaciones, estado_legajo)
+    suma_notas = 0
+    q_estudiantes = 0
+    for i in range(len(notas_estudiantes)):
+        if estado_legajo[i] == 1:
+            notas_estudiantes[i] = suma_notas
+            q_estudiantes += 1
+            for j in range(len(notas_estudiantes[i])):
+                suma_notas += notas_estudiantes[i][j]
+    print(f"Suma notas: {suma_notas}")
+    promedio_final = suma_notas / q_estudiantes
+
+    return promedio_final
