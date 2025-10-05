@@ -1,5 +1,6 @@
 from validaciones import *
 
+
 #Corrobora que no se dupliquen los valores de legajo:
 def legajo_duplicado(legajo_estudiante:list, num_legajo:int) -> bool:
     """

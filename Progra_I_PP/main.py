@@ -1,4 +1,4 @@
-"""
+""" ENUNCIADO:
 1 – Realizar la carga de los datos en la matriz y en cada una de las listas. (Se pueden hardcodear los datos).
 Realizar una función para validar cada dato a ser cargado.
 
@@ -29,27 +29,16 @@ donde estará la cantidad de veces que se repite la nota 10.
 8 – Salir del programa.
 
 """
+from configuraciones import *
 from funciones_menu1 import *
 from funciones_menu2 import *
 from funciones_menu3 import *
 from funciones_menu4 import *
-from funciones_menu5 import *
-from funciones_menu6 import *
-from funciones_menu7 import *
+#from funciones_menu5 import *
+#from funciones_menu6 import *
+#from funciones_menu7 import *
 
-cantidad_estudiantes = 3
-calificaciones = inicializar_matriz(cantidad_estudiantes, 5, 0)
-legajo_estudiante = [0] * cantidad_estudiantes
-nombre_estudiante = [0] * cantidad_estudiantes
-genero_estudiante = [0] * cantidad_estudiantes
-estado_legajo = [0] * cantidad_estudiantes
-
-"""#Comentar las siguientes líneas si se quiere probar la opción 1 del menú:
-calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,10,9,10]]
-legajo_estudiante = [112233, 332211, 445566]
-nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
-genero_estudiante = ["F", "M", "X"]
-estado_legajo = [1, 1, 1]"""
+#En el módulo configuraciones se encuentran harcodeadas los valores del punto 1. 
 
 while True:
 
@@ -60,9 +49,7 @@ while True:
     match menu:
         case 1:
             print("\nCARGA DE DATOS: \n")
-            carga_datos = False
-            while carga_datos == False:
-                carga_datos = cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
+            cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
             #FALTE AGREGAR CARGA DE NOTAS
 
         case 2:

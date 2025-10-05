@@ -1,3 +1,4 @@
+from validaciones import solo_letras
 
 #Impresión de matriz:
 """def recorrer_matriz(mi_matriz):
@@ -58,3 +59,5 @@ def buscar_valor_entero(matriz:list, valor:int):
 def mostrar_lista(lista:list) -> None:
     for i in range(len(lista)):
         print(lista[i], end= " ")
+
+
