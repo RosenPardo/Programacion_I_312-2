@@ -69,7 +69,18 @@ def mostrar_lista(lista:list) -> None:
     for i in range(len(lista)):
         print(lista[i], end= " ")
 
-def legajo_duplicado(legajo_estudiante, num_legajo):
+#Corrobora que no se dupliquen los valores de legajo:
+def legajo_duplicado(legajo_estudiante:list, num_legajo:int) -> bool:
+    """
+    Función que recorre la lista de legajos en búsqueda de valores duplicados.
+
+    Args:
+        legajo_estudiante (list): Array con números de legajo. 
+        num_legajo (int): Número a buscar dentro del array. 
+
+    Returns:
+        bool: Devuelve True si encuentra valores duplicados | False si no se encontraron duplicados. 
+    """
     for i in range(len(legajo_estudiante)):
         if legajo_estudiante[i] == int(num_legajo):
             print("El número de legajo ya existe. ")
@@ -77,7 +88,20 @@ def legajo_duplicado(legajo_estudiante, num_legajo):
     
     return False
 
-def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo):
+#Carga de todos los datos de estudiantes: 
+def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudiante:list, estado_legajo:list) -> bool:
+    """
+    Carga los arrays compartidos, validando que los datos sean correctos. 
+
+    Args:
+        legajo_estudiante (list): Espera dato de tipo int, comprendido en un valor de 6 digitos. 
+        nombre_estudiante (list): Espera dato de tipo str, únicamente letras y espacios (no permite tildes).
+        genero_estudiante (list): Solamente permite el ingreso de los caracteres 'F' 'M' o 'X'.
+        estado_legajo (list): Array con el estado del legajo 0 inactivo 1 activo. Se utiliza para buscar espacios libres donde cargar los nuevos datos. 
+
+    Returns:
+        bool: Devuelve True si se logró cargar correctamente. 
+    """
     for i in range(len(legajo_estudiante)):
 
         if estado_legajo[i] == 0:
@@ -121,6 +145,7 @@ def cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado
 
     return True
 
+#Mostrar todos los datos cargados. 
 def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
     """
     Función que imprime lo que se encuentra cargado en la matriz y arrays compartidos.
@@ -139,7 +164,17 @@ def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre
         for j in range(len(calificaciones[i])): 
             print(f"Nota Materia_{j+1}: {calificaciones[i][j]}")
 
-def cargar_promedios(calificaciones, estado_legajo):
+# **INICIO carga y muestra promedios**
+def cargar_promedios(calificaciones:list, estado_legajo: list) -> list:
+    """Carga lista de promedios en una variable. 
+
+    Args:
+        calificaciones (list): Matriz que contiene la información de todas la notas cargadas. 
+        estado_legajo (list): Array con información de legajos activos.  
+
+    Returns:
+        list: Array con promedios calculados. 
+    """
     promedio_estudiantes = inicializar_matriz(len(estado_legajo), 5, 0)
     suma_notas = 0
     q_estudiantes = 0
@@ -155,23 +190,25 @@ def cargar_promedios(calificaciones, estado_legajo):
                     contador_materias = 0
                 contador_materias += 1
                 suma_notas += calificaciones[i][j]
-                print(f"q_estudiantes: {q_estudiantes}")
-                print(f"Suma_notas: {suma_notas}")
+#                print(f"q_estudiantes: {q_estudiantes}")
+#                print(f"Suma_notas: {suma_notas}")
         promedio_estudiantes[i] = suma_notas / 5
 
     return promedio_estudiantes
 
-def mostrar_promedios(calificaciones, estado_legajo):
-    notas_estudiantes = cargar_promedios(calificaciones, estado_legajo)
-    suma_notas = 0
-    q_estudiantes = 0
-    for i in range(len(notas_estudiantes)):
-        if estado_legajo[i] == 1:
-            notas_estudiantes[i] = suma_notas
-            q_estudiantes += 1
-            for j in range(len(notas_estudiantes[i])):
-                suma_notas += notas_estudiantes[i][j]
-    print(f"Suma notas: {suma_notas}")
-    promedio_final = suma_notas / q_estudiantes
+def mostrar_promedios(promedio_notas: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
+    """
+    Función que imprime lo que se encuentra cargado los arrays compartidos, de forma ordenada.
 
-    return promedio_final
+    Args:
+        promedio_notas (list): Ayyay con promedio de calificaciones.
+        legajo_estudiante (list): Array con número de legajo de estudiantes. 
+        nombre_estudiante (list): Array con nombres de estudiantes.
+        genero_estudiante (list): Array con géneros correspondientes a los estudiantes. 
+    """
+    for i in range(len(promedio_notas)):
+        print(f"\nLejago: {legajo_estudiante[i]}")
+        print(f"Nombre: {nombre_estudiante[i]}")
+        print(f"Género estudiante: {genero_estudiante[i]}")
+        print(f"Promedio notas: {promedio_notas[i]}")
+# **FIN carga y muestra promedios**

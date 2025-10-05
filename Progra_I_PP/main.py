@@ -42,7 +42,7 @@ estado_legajo = [0] * cantidad_estudiantes
 calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,6,9,10]]
 legajo_estudiante = [112233, 332211, 445566]
 nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
-genero_estudiante = ["M", "X", "F"]
+genero_estudiante = ["F", "M", "X"]
 estado_legajo = [1, 1, 1]
 
 while True:
@@ -65,7 +65,7 @@ while True:
 
         case 3:
             promedio_notas = cargar_promedios(calificaciones, estado_legajo)
-            mostrar_lista(promedio_notas)
+            mostrar_promedios(promedio_notas, legajo_estudiante, nombre_estudiante, genero_estudiante)
         case 4:
             pass
         case 5:
