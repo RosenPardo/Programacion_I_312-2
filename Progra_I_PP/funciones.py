@@ -1,21 +1,21 @@
 from validaciones import *
 
 #Impresión de matriz:
-def recorrer_matriz(mi_matriz):
+"""def recorrer_matriz(mi_matriz):
     for i in range(len(mi_matriz)): # 0 1
         for j in range(len(mi_matriz[i])): #i = 0 entonces j = 0, 1, 2, 3 cuando i = 1 entonces j = 0, 1, 2, 3
             print(mi_matriz[i][j], end= " ")
-        print("")
+        print("")"""
 
 #Otra forma de imprimir matriz:
-def recorrer_matriz_2(mi_matriz):
+"""def recorrer_matriz_2(mi_matriz):
     for i in range(len(mi_matriz)): # 0 1
         for j in range(len(mi_matriz[i])):
             if len(mi_matriz)-1 == i and len(mi_matriz[i])-1 == j:
                 print(mi_matriz[i][j])
             else:
                 print(mi_matriz[i][j], end = " | ")
-
+"""
 #Carga de valores a una lista:
 def cargar_lista_str(lista:list, mensaje_dato:str = "Ingrese el str a cargar: ") -> None:
     """
@@ -142,6 +142,7 @@ def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudian
             estado_legajo[i] = 1
 
             print("\n Estudiante cargado correctamente. \n")
+            
 
     return True
 
@@ -164,17 +165,8 @@ def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre
         for j in range(len(calificaciones[i])): 
             print(f"Nota Materia_{j+1}: {calificaciones[i][j]}")
 
-# **INICIO carga y muestra promedios**
-def cargar_promedios(calificaciones:list, estado_legajo: list) -> list:
-    """Carga lista de promedios en una variable. 
-
-    Args:
-        calificaciones (list): Matriz que contiene la información de todas la notas cargadas. 
-        estado_legajo (list): Array con información de legajos activos.  
-
-    Returns:
-        list: Array con promedios calculados. 
-    """
+# Carga y muestra promedios:
+def calcular_promedio(calificaciones: list, estado_legajo:list):
     promedio_estudiantes = inicializar_matriz(len(estado_legajo), 5, 0)
     suma_notas = 0
     q_estudiantes = 0
@@ -190,25 +182,72 @@ def cargar_promedios(calificaciones:list, estado_legajo: list) -> list:
                     contador_materias = 0
                 contador_materias += 1
                 suma_notas += calificaciones[i][j]
-#                print(f"q_estudiantes: {q_estudiantes}")
-#                print(f"Suma_notas: {suma_notas}")
-        promedio_estudiantes[i] = suma_notas / 5
 
+        promedio_estudiantes[i] = suma_notas / 5
+    
     return promedio_estudiantes
 
-def mostrar_promedios(promedio_notas: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
+
+def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
     """
-    Función que imprime lo que se encuentra cargado los arrays compartidos, de forma ordenada.
+    Función que calcula e imprime lo que se encuentra cargado los arrays compartidos, de forma ordenada.
 
     Args:
-        promedio_notas (list): Ayyay con promedio de calificaciones.
+        calificaciones (list): Array con notas de los estudiantes.
+        estado_legajo (list): Array con el estado del legajo: 0 inactivo | 1 activo. Se utiliza para buscar encontrar datos de estudiantes.  
         legajo_estudiante (list): Array con número de legajo de estudiantes. 
         nombre_estudiante (list): Array con nombres de estudiantes.
         genero_estudiante (list): Array con géneros correspondientes a los estudiantes. 
     """
-    for i in range(len(promedio_notas)):
-        print(f"\nLejago: {legajo_estudiante[i]}")
-        print(f"Nombre: {nombre_estudiante[i]}")
-        print(f"Género estudiante: {genero_estudiante[i]}")
-        print(f"Promedio notas: {promedio_notas[i]}")
-# **FIN carga y muestra promedios**
+    promedio_estudiantes = calcular_promedio(calificaciones, estado_legajo)
+
+    for j in range(len(promedio_estudiantes)):
+        print(f"\nLejago: {legajo_estudiante[j]}")
+        print(f"Nombre: {nombre_estudiante[j]}")
+        print(f"Género estudiante: {genero_estudiante[j]}")
+        print(f"Promedio notas: {promedio_estudiantes[j]}")
+    
+    return promedio_estudiantes
+
+
+#Para ordenar promedios:
+def ordenar_promedios(calificaciones: list, estado_legajo: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
+    """La función ordena una lista.
+
+    Args:
+        lista (list): Lista a ordenar.
+
+    Returns:
+        list: Lista ordenada.
+    """
+    promedio_estudiantes = calcular_promedio(calificaciones, estado_legajo)
+    
+    n = len(promedio_estudiantes) 
+    for i in range(n):
+        for j in range(0,n - i -1):
+            if promedio_estudiantes[j] < promedio_estudiantes[j + 1]: 
+                #Swap de promedio
+                aux = promedio_estudiantes[j] 
+                promedio_estudiantes[j] = promedio_estudiantes[j+1]
+                promedio_estudiantes[j+1] = aux
+
+                #Swap de legajo
+                aux = legajo_estudiante[j] 
+                legajo_estudiante[j] = legajo_estudiante[j+1]
+                legajo_estudiante[j+1] = aux
+
+                #Swap de nombre
+                aux = nombre_estudiante
+                nombre_estudiante[j] = nombre_estudiante[j+1]
+                nombre_estudiante[j+1] = aux
+
+                #Swap de género
+                aux = genero_estudiante
+                genero_estudiante[j] = genero_estudiante[j+1]
+                genero_estudiante[j+1] = aux
+
+    for k in range(len(promedio_estudiantes)):
+        print(f"\nLejago: {legajo_estudiante[k]}")
+        print(f"Nombre: {nombre_estudiante[k]}")
+        print(f"Género estudiante: {genero_estudiante[k]}")
+        print(f"Promedio notas: {promedio_estudiantes[k]}")

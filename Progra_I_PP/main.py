@@ -39,7 +39,7 @@ genero_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
 
 
-calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,6,9,10]]
+calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,10,9,10]]
 legajo_estudiante = [112233, 332211, 445566]
 nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
 genero_estudiante = ["F", "M", "X"]
@@ -64,10 +64,13 @@ while True:
             mostrar_datos_cargados(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante)
 
         case 3:
-            promedio_notas = cargar_promedios(calificaciones, estado_legajo)
-            mostrar_promedios(promedio_notas, legajo_estudiante, nombre_estudiante, genero_estudiante)
+            print("\n VER PROMEDIO POR ESTUDIANTE: \n")
+            mostrar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
+        
         case 4:
-            pass
+            print("\n ORDENAR Y MOSTRAR ESTUDIANTES POR PROMEDIO: \n")
+            
+            ordenar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
         case 5:
             pass
         case 6:
