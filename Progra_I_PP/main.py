@@ -29,8 +29,14 @@ donde estará la cantidad de veces que se repite la nota 10.
 8 – Salir del programa.
 
 """
-from validaciones import *
-from funciones import *
+from funciones_menu1 import *
+from funciones_menu2 import *
+from funciones_menu3 import *
+from funciones_menu4 import *
+from funciones_menu5 import *
+from funciones_menu6 import *
+from funciones_menu7 import *
+
 cantidad_estudiantes = 3
 calificaciones = inicializar_matriz(cantidad_estudiantes, 5, 0)
 legajo_estudiante = [0] * cantidad_estudiantes
@@ -38,12 +44,12 @@ nombre_estudiante = [0] * cantidad_estudiantes
 genero_estudiante = [0] * cantidad_estudiantes
 estado_legajo = [0] * cantidad_estudiantes
 
-
+"""#Comentar las siguientes líneas si se quiere probar la opción 1 del menú:
 calificaciones = [[2,4,8,7,10], [10,8,5,6,8], [4,2,10,9,10]]
 legajo_estudiante = [112233, 332211, 445566]
 nombre_estudiante = ["Rosen", "Blachunt", "Jagger"]
 genero_estudiante = ["F", "M", "X"]
-estado_legajo = [1, 1, 1]
+estado_legajo = [1, 1, 1]"""
 
 while True:
 
@@ -57,7 +63,7 @@ while True:
             carga_datos = False
             while carga_datos == False:
                 carga_datos = cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
-            #AGREGAR CARGA DE NOTAS
+            #FALTE AGREGAR CARGA DE NOTAS
 
         case 2:
             print("\n MOSTRAR DATOS CARGADOS: \n")
@@ -78,4 +84,5 @@ while True:
         case 7:
             pass
         case 8:
+            print("**Se cierra el programa.**")
             break
