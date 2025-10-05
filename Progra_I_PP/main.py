@@ -69,8 +69,8 @@ while True:
         
         case 4:
             print("\n ORDENAR Y MOSTRAR ESTUDIANTES POR PROMEDIO: \n")
-            
             ordenar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
+
         case 5:
             pass
         case 6:

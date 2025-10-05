@@ -16,6 +16,7 @@ from validaciones import *
             else:
                 print(mi_matriz[i][j], end = " | ")
 """
+
 #Carga de valores a una lista:
 def cargar_lista_str(lista:list, mensaje_dato:str = "Ingrese el str a cargar: ") -> None:
     """
@@ -209,45 +210,100 @@ def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiant
     
     return promedio_estudiantes
 
+def copiar_lista(lista:list) -> list:
+    """Copia una lista por valor.
+
+    Args:
+        lista (list): Lista a copiar.
+
+    Returns:
+        list: Lista copiada por valor. 
+    """
+    lista_nueva = [0] * len(lista)
+    for i in range(len(lista)):
+        lista_nueva[i] = lista[i]
+    
+    return lista_nueva
 
 #Para ordenar promedios:
 def ordenar_promedios(calificaciones: list, estado_legajo: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
-    """La función ordena una lista.
+    """La función ordena por promedio. 
 
     Args:
-        lista (list): Lista a ordenar.
-
-    Returns:
-        list: Lista ordenada.
+        calificaciones (list): Array con notas de los estudiantes.
+        estado_legajo (list): Array con el estado del legajo: 0 inactivo | 1 activo. Se utiliza para buscar encontrar datos de estudiantes.  
+        legajo_estudiante (list): Array con número de legajo de estudiantes. 
+        nombre_estudiante (list): Array con nombres de estudiantes.
+        genero_estudiante (list): Array con géneros correspondientes a los estudiantes. 
     """
     promedio_estudiantes = calcular_promedio(calificaciones, estado_legajo)
     
+    ordenado_promedio = copiar_lista(promedio_estudiantes)
+    ordenado_legajo = copiar_lista(legajo_estudiante)
+    ordenado_nombre = copiar_lista(nombre_estudiante)
+    ordenado_genero = copiar_lista(genero_estudiante)
+
+    descendente = input("Desea mostrar de forma descendente? s|n: ")
+    descendente = capitalizar_texto(descendente)
+    validar_respuesta = solo_letras(descendente)
+
+    while validar_respuesta == False or (descendente != "S" and descendente !="N"):
+        descendente = input("Desea mostrar de forma descendente? s|n: ")
+        descendente = capitalizar_texto(descendente)
+        validar_respuesta = solo_letras(descendente)
+
+
     n = len(promedio_estudiantes) 
-    for i in range(n):
-        for j in range(0,n - i -1):
-            if promedio_estudiantes[j] < promedio_estudiantes[j + 1]: 
-                #Swap de promedio
-                aux = promedio_estudiantes[j] 
-                promedio_estudiantes[j] = promedio_estudiantes[j+1]
-                promedio_estudiantes[j+1] = aux
+    print(f"Descendente: {descendente}")
+    if descendente == "S":
+        for i in range(n):
+            for j in range(0,n - i -1):
+                if ordenado_promedio[j] < ordenado_promedio[j + 1]: 
+                    #Swap de promedio
+                    aux = ordenado_promedio[j] 
+                    ordenado_promedio[j] = ordenado_promedio[j+1]
+                    ordenado_promedio[j+1] = aux
 
-                #Swap de legajo
-                aux = legajo_estudiante[j] 
-                legajo_estudiante[j] = legajo_estudiante[j+1]
-                legajo_estudiante[j+1] = aux
+                    #Swap de legajo
+                    aux = ordenado_legajo[j] 
+                    ordenado_legajo[j] = ordenado_legajo[j+1]
+                    ordenado_legajo[j+1] = aux
 
-                #Swap de nombre
-                aux = nombre_estudiante
-                nombre_estudiante[j] = nombre_estudiante[j+1]
-                nombre_estudiante[j+1] = aux
+                    #Swap de nombre
+                    aux = ordenado_nombre[j]
+                    ordenado_nombre[j] = ordenado_nombre[j+1]
+                    ordenado_nombre[j+1] = aux
 
-                #Swap de género
-                aux = genero_estudiante
-                genero_estudiante[j] = genero_estudiante[j+1]
-                genero_estudiante[j+1] = aux
+                    #Swap de género
+                    aux = ordenado_genero[j]
+                    ordenado_genero[j] = ordenado_genero[j+1]
+                    ordenado_genero[j+1] = aux
+    else:
+        for i in range(n):
+            for j in range(0,n - i -1):
+                if ordenado_promedio[j] > ordenado_promedio[j + 1]: 
+                    #Swap de promedio
+                    aux = ordenado_promedio[j] 
+                    ordenado_promedio[j] = ordenado_promedio[j+1]
+                    ordenado_promedio[j+1] = aux
+
+                    #Swap de legajo
+                    aux = ordenado_legajo[j] 
+                    ordenado_legajo[j] = ordenado_legajo[j+1]
+                    ordenado_legajo[j+1] = aux
+
+                    #Swap de nombre
+                    aux = ordenado_nombre[j]
+                    ordenado_nombre[j] = ordenado_nombre[j+1]
+                    ordenado_nombre[j+1] = aux
+
+                    #Swap de género
+                    aux = ordenado_genero[j]
+                    ordenado_genero[j] = ordenado_genero[j+1]
+                    ordenado_genero[j+1] = aux
 
     for k in range(len(promedio_estudiantes)):
-        print(f"\nLejago: {legajo_estudiante[k]}")
-        print(f"Nombre: {nombre_estudiante[k]}")
-        print(f"Género estudiante: {genero_estudiante[k]}")
-        print(f"Promedio notas: {promedio_estudiantes[k]}")
+        print(f"\nLejago: {ordenado_legajo[k]}")
+        print(f"Nombre: {ordenado_nombre[k]}")
+        print(f"Género estudiante: {ordenado_genero[k]}")
+        print(f"Promedio notas: {ordenado_promedio[k]}")
