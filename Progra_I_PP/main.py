@@ -34,7 +34,7 @@ from funciones_menu1 import *
 from funciones_menu2 import *
 from funciones_menu3 import *
 from funciones_menu4 import *
-#from funciones_menu5 import *
+from funciones_menu5 import *
 #from funciones_menu6 import *
 #from funciones_menu7 import *
 
@@ -65,7 +65,8 @@ while True:
             ordenar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
 
         case 5:
-            pass
+            print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
+            ordenar_mostrar_promedio_materias(calificaciones)
         case 6:
             pass
         case 7:

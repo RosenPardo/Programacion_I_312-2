@@ -2,7 +2,7 @@ from validaciones import capitalizar_texto, solo_letras
 from funciones_menu3 import calcular_promedio
 
 
-
+#Pasaje por valor de listas para usar en ordenar_promedios().
 def copiar_lista(lista:list) -> list:
     """Copia una lista por valor.
 
@@ -18,9 +18,9 @@ def copiar_lista(lista:list) -> list:
     
     return lista_nueva
 
-#Para ordenar promedios:
+#Para ordenar y mostrar estudiantes por promedio:
 def ordenar_promedios(calificaciones: list, estado_legajo: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
-    """La función ordena por promedio. 
+    """La función ordena y muestra a los estudiantes por promedio. 
 
     Args:
         calificaciones (list): Array con notas de los estudiantes.
@@ -47,7 +47,6 @@ def ordenar_promedios(calificaciones: list, estado_legajo: list, legajo_estudian
 
 
     n = len(promedio_estudiantes) 
-    print(f"Descendente: {descendente}")
     if descendente == "S":
         for i in range(n):
             for j in range(0,n - i -1):
