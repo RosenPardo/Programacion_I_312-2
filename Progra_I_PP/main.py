@@ -36,7 +36,7 @@ from funciones_menu3 import *
 from funciones_menu4 import *
 from funciones_menu5 import *
 from funciones_menu6 import *
-#from funciones_menu7 import *
+from funciones_menu7 import *
 
 #En el módulo configuraciones se encuentran harcodeadas los valores del punto 1. 
 
@@ -54,7 +54,7 @@ while True:
 
         case 2:
             print("\n MOSTRAR DATOS CARGADOS: \n")
-            mostrar_datos_cargados(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante)
+            mostrar_datos_cargados(calificaciones, legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
 
         case 3:
             print("\n VER PROMEDIO POR ESTUDIANTE: \n")
@@ -63,15 +63,20 @@ while True:
         case 4:
             print("\n ORDENAR Y MOSTRAR ESTUDIANTES POR PROMEDIO: \n")
             ordenar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
-
+            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
         case 5:
             print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
             ordenar_mostrar_promedio_materias(calificaciones)
+            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
+
         case 6:
             print("\n BUSQUEDA DATOS ESTUDIANTE POR LEGAJO: \n")
             buscar_estudiante(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo, calificaciones)
+            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
+
         case 7:
             pass
+
         case 8:
             print("**Se cierra el programa.**")
             break

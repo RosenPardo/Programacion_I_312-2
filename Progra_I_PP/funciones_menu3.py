@@ -45,9 +45,10 @@ def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiant
     promedio_estudiantes = calcular_promedio(calificaciones, estado_legajo)
 
     for j in range(len(promedio_estudiantes)):
-        print(f"\nLejago: {legajo_estudiante[j]}")
-        print(f"Nombre: {nombre_estudiante[j]}")
-        print(f"Género estudiante: {genero_estudiante[j]}")
-        print(f"Promedio notas: {promedio_estudiantes[j]}")
+        if estado_legajo[j] == 1:
+            print(f"\nLejago: {legajo_estudiante[j]}")
+            print(f"Nombre: {nombre_estudiante[j]}")
+            print(f"Género estudiante: {genero_estudiante[j]}")
+            print(f"Promedio notas: {promedio_estudiantes[j]}")
     
     return promedio_estudiantes

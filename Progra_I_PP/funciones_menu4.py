@@ -94,8 +94,8 @@ def ordenar_promedios(calificaciones: list, estado_legajo: list, legajo_estudian
                     ordenado_genero[j] = ordenado_genero[j+1]
                     ordenado_genero[j+1] = aux
 
-    for k in range(len(promedio_estudiantes)):
-        print(f"\nLejago: {ordenado_legajo[k]}")
-        print(f"Nombre: {ordenado_nombre[k]}")
-        print(f"Género estudiante: {ordenado_genero[k]}")
-        print(f"Promedio notas: {ordenado_promedio[k]}")
+    for i in range(len(promedio_estudiantes)):
+        print(f"\nLejago: {ordenado_legajo[i]}")
+        print(f"Nombre: {ordenado_nombre[i]}")
+        print(f"Género estudiante: {ordenado_genero[i]}")
+        print(f"Promedio notas: {ordenado_promedio[i]}")
