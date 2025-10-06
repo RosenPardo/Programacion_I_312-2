@@ -46,8 +46,6 @@ def validacion_menu(menu:str) -> int:
         menu = None
     return menu
 
-
-
 def solo_letras(cadena:str) -> bool:
     """Determina si una cadena está compuesta únicamente por letras (mayúsculas y minúsculas) o espacios.
 

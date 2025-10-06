@@ -35,7 +35,7 @@ from funciones_menu2 import *
 from funciones_menu3 import *
 from funciones_menu4 import *
 from funciones_menu5 import *
-#from funciones_menu6 import *
+from funciones_menu6 import *
 #from funciones_menu7 import *
 
 #En el módulo configuraciones se encuentran harcodeadas los valores del punto 1. 
@@ -68,7 +68,8 @@ while True:
             print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
             ordenar_mostrar_promedio_materias(calificaciones)
         case 6:
-            pass
+            print("\n BUSQUEDA DATOS ESTUDIANTE POR LEGAJO: \n")
+            buscar_estudiante(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo, calificaciones)
         case 7:
             pass
         case 8:
