@@ -15,7 +15,6 @@ legajo_estudiante = [112233, 332211, 445566, 556677, 778899, 889900, 990011, 110
 
 nombre_estudiante = ["Ofelia Muñoz", "Francisco Lopez", "Alex Romero", "Lucia Fernandez", "Pedro Gonzalez","Camila Herrera", "Marta Suarez", "Diego Cabrera", "Ricardo Alvarez", "Sofia Molina","Tomas Duarte", "Paula Rios", "Leandro Vega", "Carla Navarro", "Elena Paredes","Julia Sosa", "Andres Marin", "Julieta Castro", "Ignacio Blanco", "Nora Campos","Marcos Ruiz", "Esteban Torres", "Pilar Benitez", "Simon Morales", "Valeria Diaz","Lara Romero", "Rosa Cabrera", 0, 0, 0]
 
-
 genero_estudiante = [ "F", "M", "X", "F", "M", "F", "F", "M", "M", "F", "X", "F", "M", "F", "F", "F", "X", "F", "M", "F", "M", "M", "F", "X", "F", "F", "F", 0, 0, 0]
 
 estado_legajo = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]

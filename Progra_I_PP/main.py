@@ -21,14 +21,13 @@ while True:
             print("Debe cargar datos para poder continuar. \n")
             menu = input("\n*MENÚ DE OPCIONES* \n 1) Carga de datos. \n 2) Mostrar datos cargados. \n 3) Ver promedio por estudiante. \n 4) Ordenar y mostrar los datos de los estudiantes por promedio. \n 5) Mostrar la/s materia/s con mayor promedio general. \n 6) Buscar y mostrar todos los datos de un estudiante por legajo. \n 7) Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada. \n 8) Salir del programa.\n Seleccione el valor: ")
             menu = validacion_menu(menu) 
-            if menu == 1:
-                primer_ejecucion = False
+        if menu == 1:
+            primer_ejecucion = False
 
     match menu:
         case 1:
             print("\nCARGA DE DATOS: \n")
             cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, calificaciones, estado_legajo)
-            
 
         case 2:
             print("\n MOSTRAR DATOS CARGADOS: \n")

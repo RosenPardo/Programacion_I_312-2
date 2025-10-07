@@ -23,8 +23,13 @@ def calcular_promedio_materias(calificaciones:list) -> list:
     
     return promedio_materia
 
-def ordenar_mostrar_promedio_materias(calificaciones:list):
-    
+def ordenar_mostrar_promedio_materias(calificaciones:list) -> None:
+    """
+    La función ordena e imprime la/las materia/s con mayor promedio. 
+
+    Args:
+        calificaciones (list): Matriz con calificaciones. 
+    """
     promedio_materias = calcular_promedio_materias(calificaciones)
     p = len(promedio_materias)
     
@@ -55,10 +60,10 @@ def ordenar_mostrar_promedio_materias(calificaciones:list):
 
     if cantidad_a_mostrar == "1":
         for i in range(p):
-            print(f"Promedio Materia_{nombre_materias[i]}= {promedio_materias[i]}")
+            print(f"Promedio Materia_{nombre_materias[i]}: {promedio_materias[i]}")
     else:
         for i in range(p):
-            print(f"Promedio Materia_{nombre_materias[i]}= {promedio_materias[i]}")
+            print(f"Promedio Materia_{nombre_materias[i]}: {promedio_materias[i]}")
             break
 
 

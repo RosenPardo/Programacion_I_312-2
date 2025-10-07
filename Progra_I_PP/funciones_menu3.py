@@ -1,5 +1,16 @@
 #Creación e inicialización una matriz:
 def inicializar_matriz(cantidad_filas:int, cantidad_columnas:int, valor_inicial:any) -> list:
+    """
+    Función para inicializar una matriz. 
+
+    Args:
+        cantidad_filas (int): Cantidad de filas que tendrá la matriz. 
+        cantidad_columnas (int): Cantidad de columnas que tendrá la matriz. 
+        valor_inicial (any): Valor que se incluirá dentro de la matriz. 
+
+    Returns:
+        list: Matriz cargada con el tamaño y valor indicado anteriormente. 
+    """
     matriz = []
     for _ in range(cantidad_filas):
         fila = [valor_inicial] * cantidad_columnas  
@@ -9,7 +20,17 @@ def inicializar_matriz(cantidad_filas:int, cantidad_columnas:int, valor_inicial:
     return matriz
 
 # Carga y muestra promedios:
-def calcular_promedio(calificaciones: list, estado_legajo:list):
+def calcular_promedio(calificaciones: list, estado_legajo:list) -> list:
+    """
+    Función para calcular el promedio que se encuentra cargado en la matriz 'Calificaciones'.
+
+    Args:
+        calificaciones (list): Matriz con notas.
+        estado_legajo (list): Estado de legajo de estudiantes, utilizada para contabilizar estudiantes activos y sus notas. 
+
+    Returns:
+        list: Array con el promedio de notas.  
+    """
     promedio_estudiantes = [0] * len(estado_legajo)
     suma_notas = 0
     q_estudiantes = 0
@@ -31,8 +52,8 @@ def calcular_promedio(calificaciones: list, estado_legajo:list):
     return promedio_estudiantes
 
 
-def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> None:
-    """
+def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list) -> list:
+    """    
     Función que calcula e imprime lo que se encuentra cargado los arrays compartidos, de forma ordenada.
 
     Args:
@@ -41,6 +62,9 @@ def mostrar_promedios(calificaciones: list, estado_legajo:list, legajo_estudiant
         legajo_estudiante (list): Array con número de legajo de estudiantes. 
         nombre_estudiante (list): Array con nombres de estudiantes.
         genero_estudiante (list): Array con géneros correspondientes a los estudiantes. 
+
+    Returns:
+        list: Array con el promedio de notas. 
     """
     promedio_estudiantes = calcular_promedio(calificaciones, estado_legajo)
 

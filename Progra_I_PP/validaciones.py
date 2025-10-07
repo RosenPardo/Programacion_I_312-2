@@ -1,5 +1,6 @@
 def solo_enteros(cadena:str) -> bool:
-    """Verifica si una cadena representa un número entero válido (positivo o negativo)
+    """
+    Verifica si una cadena representa un número entero válido (positivo o negativo)
 
     Args:
         cadena (str): Cadena a verificar.
@@ -23,7 +24,8 @@ def solo_enteros(cadena:str) -> bool:
     return son_enteros
 
 def validacion_menu(menu:str) -> int:
-    """Verifica que sea un númro entero con la función solo_enteros(), castea el valor y verifica que sea entre 1 y 8. Si encuentra un error, muestra en consola que es un valor erróneo.  
+    """
+    Verifica que sea un númro entero con la función solo_enteros(), castea el valor y verifica que sea entre 1 y 8. Si encuentra un error, muestra en consola que es un valor erróneo.  
 
     Args:
         menu (str): Cadena de caracteres a verificar.
@@ -44,21 +46,9 @@ def validacion_menu(menu:str) -> int:
         menu = None
     return menu
 
-def menu_principal(primer_ejecucion):
-    menu = input("\n*MENÚ DE OPCIONES* \n 1) Carga de datos. \n 2) Mostrar datos cargados. \n 3) Ver promedio por estudiante. \n 4) Ordenar y mostrar los datos de los estudiantes por promedio. \n 5) Mostrar la/s materia/s con mayor promedio general. \n 6) Buscar y mostrar todos los datos de un estudiante por legajo. \n 7) Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada. \n 8) Salir del programa.\n Seleccione el valor: ")
-    menu = validacion_menu(menu) #FALTA VALIDAR QUE SEA EL VALOR 1 la primer opción.
-
-    while primer_ejecucion:
-        if primer_ejecucion and menu != 1:
-            print("Debe cargar datos para poder continuar. \n")
-            menu = input("\n*MENÚ DE OPCIONES* \n 1) Carga de datos. \n 2) Mostrar datos cargados. \n 3) Ver promedio por estudiante. \n 4) Ordenar y mostrar los datos de los estudiantes por promedio. \n 5) Mostrar la/s materia/s con mayor promedio general. \n 6) Buscar y mostrar todos los datos de un estudiante por legajo. \n 7) Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada. \n 8) Salir del programa.\n Seleccione el valor: ")
-            menu = validacion_menu(menu) #FALTA VALIDAR QUE SEA EL VALOR 1 la primer opción.
-    primer_ejecucion = False
-    
-    return menu
-
 def solo_letras(cadena:str) -> bool:
-    """Determina si una cadena está compuesta únicamente por letras (mayúsculas y minúsculas) o espacios.
+    """
+    Determina si una cadena está compuesta únicamente por letras (mayúsculas y minúsculas) o espacios.
 
     Args:
         cadena (str): Cadena de caracteres a verificar. 
@@ -77,7 +67,16 @@ def solo_letras(cadena:str) -> bool:
 
     return son_letras
 
-def capitalizar_texto(array_texto):
+def capitalizar_texto(array_texto:str) -> str:
+    """
+    Capitaliza la cadena de caracteres que se reciba. 
+
+    Args:
+        array_texto (str): Cadena de caracteres a capitalizar. 
+
+    Returns:
+        str: Cadena de caracteres capitalizada. 
+    """
 
     array_capitalizado = ""
 
@@ -91,7 +90,8 @@ def capitalizar_texto(array_texto):
     return array_capitalizado
 
 def validar_genero(cadena: chr) -> bool:
-    """Verifica que el valor de la cadena sea 'F' 'M' o 'X'"
+    """
+    Verifica que el valor de la cadena sea 'F' 'M' o 'X'"
 
     Args:
         cadena (chr): Cadena a verificar
