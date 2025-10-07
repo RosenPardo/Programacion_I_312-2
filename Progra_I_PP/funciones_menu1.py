@@ -21,7 +21,7 @@ def legajo_duplicado(legajo_estudiante:list, num_legajo:int) -> bool:
     return False
 
 #Carga de todos los datos de estudiantes: 
-def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudiante:list, estado_legajo:list) -> bool:
+def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudiante:list, calificaciones:list, estado_legajo:list) -> bool:
     """
     Carga los arrays compartidos, validando que los datos sean correctos. 
 
@@ -40,15 +40,15 @@ def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudian
             #Carga legajo:
             num_legajo = input("Ingrese el número de legajo que desea cargar: ")
             validar_int = solo_enteros(num_legajo)
-            validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
+            if validar_int:
+                validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
 
             while validar_int == False or len(num_legajo) != 6 or validar_duplicado == True:
                 num_legajo = input("Ingresó un valor erróneo. Ingrese el número de legajo que desea cargar: ")
                 validar_int = solo_enteros(num_legajo)
-                validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
-                
+                if validar_int:
+                    validar_duplicado = legajo_duplicado(legajo_estudiante, num_legajo)
             
-
             legajo_estudiante[i] = int(num_legajo)
 
             #Carga de nombre:
@@ -71,6 +71,22 @@ def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudian
             
             genero = capitalizar_texto(genero)
             genero_estudiante[i] = genero
+            
+            #Carga de calificaciones: 
+            for j in range(len(calificaciones[i])):
+                valor_nota = input(f"Ingrese el la nota de Materia_{j+1}: ")
+                validar_int = solo_enteros(valor_nota)
+                if validar_int:
+                    valor_nota = int(valor_nota)
+
+                while validar_int == False or valor_nota < 1 or valor_nota > 10:
+                    valor_nota = input(f"Ingresó un valor erróneo (Nota comprendida entre 1 - 10). Ingrese el la nota de Materia_{j+1}: ")
+                    validar_int = solo_enteros(valor_nota)
+                    if validar_int:
+                        valor_nota = int(valor_nota)
+
+                calificaciones[i][j] = int(valor_nota)
+
             estado_legajo[i] = 1
 
             print("\n Estudiante cargado correctamente. \n")

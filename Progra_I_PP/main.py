@@ -36,7 +36,7 @@ from funciones_menu3 import *
 from funciones_menu4 import *
 from funciones_menu5 import *
 from funciones_menu6 import *
-from funciones_menu7 import *
+#from funciones_menu7 import *
 
 #En el módulo configuraciones se encuentran harcodeadas los valores del punto 1. 
 
@@ -49,8 +49,7 @@ while True:
     match menu:
         case 1:
             print("\nCARGA DE DATOS: \n")
-            cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo)
-            #FALTE AGREGAR CARGA DE NOTAS
+            cargar_datos(legajo_estudiante, nombre_estudiante, genero_estudiante, calificaciones, estado_legajo)
 
         case 2:
             print("\n MOSTRAR DATOS CARGADOS: \n")
