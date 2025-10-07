@@ -36,7 +36,7 @@ from funciones_menu3 import *
 from funciones_menu4 import *
 from funciones_menu5 import *
 from funciones_menu6 import *
-#from funciones_menu7 import *
+from funciones_menu7 import *
 
 #En el módulo configuraciones se encuentran harcodeadas los valores del punto 1. 
 
@@ -72,7 +72,8 @@ while True:
             buscar_estudiante(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo, calificaciones)
 
         case 7:
-            pass
+            mostar_notas_por_materia(calificaciones)
+
 
         case 8:
             print("**Se cierra el programa.**")
