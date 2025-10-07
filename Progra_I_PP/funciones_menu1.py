@@ -90,6 +90,6 @@ def cargar_datos(legajo_estudiante:list, nombre_estudiante:list, genero_estudian
             estado_legajo[i] = 1
 
             print("\n Estudiante cargado correctamente. \n")
-            
+
 
     return True

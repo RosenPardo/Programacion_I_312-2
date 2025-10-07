@@ -11,7 +11,7 @@ def mostrar_datos_cargados(calificaciones: list, legajo_estudiante: list, nombre
     """
     for i in range(len(calificaciones)):
         if estado_legajo[i] == 1:
-            print(f"\nLejago: {legajo_estudiante[i]}")
+            print(f"\nLegajo: {legajo_estudiante[i]}")
             print(f"Nombre: {nombre_estudiante[i]}")
             print(f"Género estudiante: {genero_estudiante[i]}")
 
