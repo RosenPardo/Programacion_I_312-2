@@ -36,13 +36,13 @@ def validacion_menu(menu:str) -> int:
     if validacion_int:
         menu = int(menu)
         if menu < 1 or menu > 8:
-            print("Ingresó un valor incorrecto. Intente de nuevo")
+            print("Ingresó un valor incorrecto. Intente de nuevo.")
             menu = None
 #            elif menu != 1 and inicializado == False:
 #                print("No existen cargas activas. Realice al menos una carga.")
 #                menu = None
     else:
-        print("Ingresó un valor incorrecto. Intente de nuevo")
+        print("Ingresó un valor incorrecto. Intente de nuevo.")
         menu = None
     return menu
 

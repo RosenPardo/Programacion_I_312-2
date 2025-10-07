@@ -58,20 +58,18 @@ while True:
         case 3:
             print("\n VER PROMEDIO POR ESTUDIANTE: \n")
             mostrar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
-        
+
         case 4:
             print("\n ORDENAR Y MOSTRAR ESTUDIANTES POR PROMEDIO: \n")
             ordenar_promedios(calificaciones, estado_legajo, legajo_estudiante, nombre_estudiante, genero_estudiante)
-            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
+
         case 5:
             print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
             ordenar_mostrar_promedio_materias(calificaciones)
-            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
 
         case 6:
             print("\n BUSQUEDA DATOS ESTUDIANTE POR LEGAJO: \n")
             buscar_estudiante(legajo_estudiante, nombre_estudiante, genero_estudiante, estado_legajo, calificaciones)
-            #TIENE QUE MOSTRAR LOS LEGAJOS QUE TENGAN DATOS
 
         case 7:
             pass

@@ -10,7 +10,7 @@ def inicializar_matriz(cantidad_filas:int, cantidad_columnas:int, valor_inicial:
 
 # Carga y muestra promedios:
 def calcular_promedio(calificaciones: list, estado_legajo:list):
-    promedio_estudiantes = inicializar_matriz(len(estado_legajo), 5, 0)
+    promedio_estudiantes = [0] * len(estado_legajo)
     suma_notas = 0
     q_estudiantes = 0
     contador_materias = 0
