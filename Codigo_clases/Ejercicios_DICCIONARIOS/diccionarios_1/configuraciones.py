@@ -5,82 +5,94 @@
 
 
 """estudiantes = [{
+    "Legajo": 123456,
     "Nombre": "", 
     "Nota_1": 0,
     "Nota_2": 0,
     "Nota_3": 0,
-    "Legajo": 0,
+    "Div.": 0,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "", 
     "Nota_1": 0,
     "Nota_2": 0,
     "Nota_3": 0,
-    "Legajo": 0,
+    "Div.": 0,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "", 
     "Nota_1": 0,
     "Nota_2": 0,
     "Nota_3": 0,
-    "Legajo": 0,
+    "Div.": 0,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "", 
     "Nota_1": 0,
     "Nota_2": 0,
     "Nota_3": 0,
-    "Legajo": 0,
+    "Div.": 0,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "", 
     "Nota_1": 0,
     "Nota_2": 0,
     "Nota_3": 0,
-    "Legajo": 0,
+    "Div.": 0,
     "Promedio": 0
     }]
 """
 
-estudiantes = [{"Nombre": "Rosen",
+estudiantes = [{
+    "Legajo": 123456,
+    "Nombre": "Rosen",
     "Nota_1": 5, 
     "Nota_2": 6, 
     "Nota_3": 4, 
-    "Legajo": 0,
-    "Promedio": 0},
+    "Div.": 313,
+    "Promedio": 0
+    },
     {
+    "Legajo": 123456,
     "Nombre": "Maite", 
     "Nota_1": 7,
     "Nota_2": 8,
     "Nota_3": 5,
-    "Legajo": 0,
+    "Div.": 312,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "Maria", 
     "Nota_1": 7,
     "Nota_2": 8,
     "Nota_3": 5,
-    "Legajo": 0,
+    "Div.": 312,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "Esteban", 
     "Nota_1": 6,
     "Nota_2": 7,
     "Nota_3": 8, 
-    "Legajo": 0,
+    "Div.": 313,
     "Promedio": 0
     },
     {
+    "Legajo": 123456,
     "Nombre": "Juan", 
     "Nota_1": 7,
     "Nota_2": 5,
     "Nota_3": 8,
-    "Legajo": 0,
+    "Div.": 312,
     "Promedio": 0
     }]
