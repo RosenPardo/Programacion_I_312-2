@@ -11,7 +11,7 @@
 #     - Mostrar el porcentaje de estudiantes por cada división.
 
 from configuraciones import *
-from funciones import *
+from funciones_cargar_mostrar import *
 
 
 while True:
