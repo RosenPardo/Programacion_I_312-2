@@ -70,7 +70,7 @@ import json
 
 def escribir_json(datos:list, nombre_archivo:str) -> None:
     """
-    Función que crea un archivo .json (si existe, lo sobreescribe)
+    Función que crea un archivo .json (si existe, lo sobreescribe). Se debe importar el módulo "json".
 
     Args:
         datos (list): Diccionario que se cargará en el archivo json. 
@@ -80,14 +80,31 @@ def escribir_json(datos:list, nombre_archivo:str) -> None:
     with open(nombre_archivo, "w") as archivo_json:
         json.dump(datos, archivo_json, indent=4) #El parámetro indent para que sea más legible
 
-datos = {
-    "nombre": "Juan",
-    "edad": 28,
-    "ciudad": "Madrid"
-}
+# PROBAR LA FUNCIÓN: escribir_json()
+#
+#datos = {
+#    "nombre": "Juan",
+#    "edad": 28,
+#    "ciudad": "Madrid"
+#}
+#
+#escribir_json(datos, "Archivo.json")
 
-escribir_json(datos, "Archivo.json")
+def leer_json(nombre_archivo:str) -> None:
+    """
+    Imprime en pantalla la información del archivo json. Se debe importar el módulo "json". 
 
+    Args:
+        nombre_archivo (str): Nombre del archivo que se desea printear. 
+    """
+    try:
+        with open(nombre_archivo, "r") as archivo_json:
+            datos = json.load(archivo_json) # Cargar el contenido en un diccionario
 
+        print(datos)
+    except: 
+        print("No se encontró el archivo.")
 
+# PROBAR LA FUNCION: leer_jston():
 
+leer_json("archivo.json")
