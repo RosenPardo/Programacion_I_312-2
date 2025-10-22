@@ -20,3 +20,24 @@ def calcular_promedio(estudiantes: list) -> None:
     promedio_gen = suma_notas_gen / len(estudiantes)
     
     print(f"El promedio general es de {round(promedio_gen, 2)}\n")
+
+
+def buscar_promedios(estudiantes, promedio):
+    resultados = []
+    for indice, estudiante in enumerate(estudiantes):
+        if estudiante["Promedio"] >= promedio:
+            resultados.append((indice, estudiante))
+    return resultados
+
+
+def mostrar_promedios(estudiantes):
+    mejores_promedios = buscar_promedios(estudiantes, 6.0)
+    print(mejores_promedios)
+    for posicion, estudiante in mejores_promedios:
+        for i in range(len(estudiantes)):
+            for j in range(len(estudiantes)):
+                    if  estudiantes[i] < estudiantes[j]:
+                        estudiantes[i], estudiantes[j] = estudiantes[j], estudiantes[i]
+
+        return estudiantes
+        print(f"Posición {posicion}: {estudiante["Nombre"]} - {estudiante["Promedio"]}")

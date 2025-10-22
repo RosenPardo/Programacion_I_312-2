@@ -11,7 +11,8 @@
 #     - Mostrar el porcentaje de estudiantes por cada división.
 
 from configuraciones import *
-from funciones_cargar_mostrar import *
+from funciones_io import *
+from funciones_calculos import *
 
 
 while True:
@@ -21,7 +22,7 @@ while True:
         case 1:
             print("***Cargar manualmemte 5 estudiantes**")
             
-            carga_estudiantes(estudiantes)
+            #carga_estudiantes(estudiantes)
             mostrar_estudiantes(estudiantes, key_7= None)
 
         case 2:
@@ -31,7 +32,11 @@ while True:
             mostrar_estudiantes(estudiantes, key_1= None, key_3= None, key_4= None, key_5= None, key_6= None)
 
         case 3:
-            print("**")
+            print("**Listar los nombres de los estudiantes cuya nota sea mayor o igual a 6**")
+
+            
+            buscar_promedios(estudiantes, 6.0)
+            mostrar_promedios(estudiantes)
 
         case 4:
             pass
