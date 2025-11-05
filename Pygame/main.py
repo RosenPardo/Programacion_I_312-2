@@ -1,9 +1,10 @@
+import pygame as pg
 from funciones.configuracion import *
 
 
-iniciar_juego()
+pantalla = iniciar_juego()
 
-color_blanco = (255, 255, 255)
+dibujar_grilla(pantalla)
 
 while True:
 
@@ -13,5 +14,4 @@ while True:
             exit()
 
     pg.display.flip()
-    
 

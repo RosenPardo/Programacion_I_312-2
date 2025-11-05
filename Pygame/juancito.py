@@ -52,7 +52,7 @@ figura.y = 0
 
 
 
-simbolo_x = pg.image.load("D:/UTN/Programacion_I_312/Pygame/img/bill.png")
+simbolo_x = pg.image.load("D:/UTN/Programacion_I_312/Pygame/img/icono.png")
 sinbolo_x = pg.transform.scale(simbolo_x, (10, 10))
 
 
